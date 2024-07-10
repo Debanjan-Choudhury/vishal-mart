@@ -1,0 +1,432 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e5ec; /* Light blue background */
+    color: #333; /* Main text color */
+    line-height: 1.6;
+}
+
+/* Container for centralizing content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+header .container{
+    display: flex;
+}
+/* Header styles */
+header {
+    background-color: #122735; /* Blue header */
+    color: #fff;
+    padding: 10px 0;
+    /* position: relative; */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.header-right{
+    /* position: absolute; */
+    /* top: 50%; */
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 40px;
+    /* right: 20px; */
+    /* transform: translateY(-50%); */
+}
+.header-right a{
+    height: 100%;
+    width: 20%;
+}
+.header-right button{
+   height: 100%;
+   width: 100%;
+   font-size: 15px;
+   cursor: pointer;
+   outline: none;
+   border-radius: 5px;
+   background-color: #86cfff;
+   border: none;
+   text-transform: uppercase;
+}
+.header-right button:hover{
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+}
+.header-right .active{
+    background-color: #00f7ff;
+}
+
+.header-right ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+/* Main content styles */
+.hero {
+    background-color: #5dade2; /* Light blue hero section */
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+/* Products section styles */
+.product-grid{
+    overflow-x: auto;
+    height: 350px;
+    display: flex;
+}
+.products {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    /* display: inline-block; */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    margin: 10px;
+    min-width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.product-grid .product-card:hover{
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+.product-card .imgcont {
+    width: 100%;
+    height: 80%;
+    overflow: none;
+}
+.product-card .info{
+    display: none;
+}
+ .product-card .info{
+    width: 100px;
+    position: absolute;
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.493));
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    text-align: center;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+
+.product-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product-card button {
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.product-card button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Login page styles */
+.login-main {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.login-main h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-form button {
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-form button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.login-main p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-main p a {
+    color: #3498db; /* Blue link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-main p a:hover {
+    text-decoration: underline;
+}
+
+/* Search form styles */
+.search-form {
+    margin-left: 20px;
+    text-align: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.search-form input[type="text"]:focus{
+    outline: none;
+}
+.search-form button {
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.search-form button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Cart Page Styles */
+.cart-main {
+    margin: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+#cartEmptyMessage {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
+
+#cartForm h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+#cartForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+#cartForm form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#cartForm form input[type="text"],
+#cartForm form button {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#cartForm form button {
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+#cartForm form button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.order-item {
+    margin: 10px 0;
+}
+
+/* Quantity Button Styles */
+.quantity-btn {
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.quantity-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Order confirmation page styles */
+.order-confirmation {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.order-details {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.order-details h3 {
+    margin-bottom: 20px;
+}
+
+.order-details p {
+    margin-bottom: 10px;
+}
+
+.back-to-home {
+    display: inline-block;
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.back-to-home:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #3498db; /* Blue footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+ /* HOME  */
+ .products .product-card{
+    width: 300px;
+    display: inline-block;
+    height: 400px;
+ }
+.product-card:hover{
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+.product-item-img{
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    background-color: red;
+ }
+ .product-item-img img{
+    width: 100%;
+ }
+a{
+    text-decoration: none;
+ }
+.product-item-info{
+    color: black;
+ }

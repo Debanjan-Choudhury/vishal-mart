@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Vishalcart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                
+                    <h1 class="logo">Vishalcart</h1>
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id="searchInput" name="searchInput" placeholder="Search by product name...">
+                        <button type="submit">Search</button>
+                    </form>
+                
+            </div>
+            <div class="header-right">
+                
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="shop.html"><button class="active">Shop</button></a>
+                    <a href="login.html"><button>Login</button></a>
+                   <a href="cart.html"><button>Cart</button></a>
+                
+            </div>
+        </div>
+    </header>
+
+    <main class="shop-main">
+        <div class="container">
+            <h2>Shop Our Products</h2>
+            <h3>Electronices</h3>
+            <div class="product-grid">
+                
+                <!-- Example product cards -->
+                <div class="product-card" data-id="1" data-name="Blue Yeti" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/Microphone.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Blue Yeti</h3>
+                            <p>Yeti Nano mic, custom base with cable management, USB cable, 1/4-inch to 5/8-inch adapter, Quick Start Guide</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="1" data-name="HTC Vive Focus 3" data-price="1000">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/vr.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>HTC Vive Focus 3</h3>
+                            <p>HTC Vive Focus 3 comes with 5K Awesome Inspiring Visual Fidelity, Immerse yourself in next-gen visuals with industry-leading 5K resolution, wide 120˚ field of view,</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> <div class="product-card" data-id="1" data-name="boAt Bassheads 242" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/earphone.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>boAt Bassheads 242</h3>
+                            <p>Fly into your workouts with precise tones that inspire and energize your system with its HD sound, all the time.</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div><div class="product-card" data-id="1" data-name="MI Power Bank" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/powerbank.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>MI Power Bank</h3>
+                            <p>MI Power Bank 3i 20000mAh Lithium Polymer 18W Fast Power Delivery Charging | Input- Type C | Micro USB| Triple Output | Black.</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> <div class="product-card" data-id="1" data-name="Sandisk 1TB" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/ssd.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Sandisk 1TB</h3>
+                            <p>Sandisk 1TB Portable SSD, 800MB/s R, USB 3.2 Gen 2, Rugged SSD with upto 2 meter drop protection, Type-C to Type-A cable, PC & Mac compatible, 3 Y Warranty, External SSD (SDSSDE30-1T00-G26)</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> 
+                <!-- Repeat product cards as needed -->
+            </div>
+
+            <!-- ANOTHER CATEG  .... -->
+            
+            <h3>Appliances</h3>
+            <div class="product-grid">
+                
+                <!-- Example product cards -->
+                <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/Microwave.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Convection Microwave Oven</h3>
+                            <p>IFB 28 L Convection Microwave Oven (28BC5, Black)</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/bajaj.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Bajaj FX-1000</h3>
+                            <p>Bajaj FX-1000 DLX 1000 Watts Food Processor and Mixer Grinder with 9 attachments (Black)</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/stove.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Crompton Superslim</h3>
+                            <p>Crompton Superslim Hb TAB Super Slim 78 cm 4Br MBLK Tablet Hob With Toughened Glass (Tempered Glass, 4 Burner, Midnight Black)</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/water.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Water purifier</h3>
+                            <p>Faber RO+ MAT+Vitamin C,7 Liters Water purifier with 7Stage, Upto 2500 TDS, Black</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/Microwave.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Convection Microwave Oven</h3>
+                            <p>IFB 28 L Convection Microwave Oven (28BC5, Black)</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> 
+                <!-- Repeat product cards as needed -->
+            </div>
+
+            <!-- ANOTHER CATEGO... -->
+            
+            <h3>Grocery</h3>
+            <div class="product-grid">
+                
+                <!-- Example product cards -->
+                <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/Surf Excel.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Surf Excel</h3>
+                            <p>Surf Excel Matic Top Load Liquid Detergent 3.2 L Refill, Designed for Tough Stain Removal on Laundry in Washing Machines - Mega Pack (Package may differ)</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/rava.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Rava </h3>
+                            <p>MTR Rava Idli Mix 1Kg</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <div class="imgcont">
+                            <img src="img/Mustard Oil.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Product 1">
+                        </div>
+                        <div class="info">
+                            <h3>Mustard Oil</h3>
+                            <p>Fortune Premium Kachi Ghani Pure Mustard Oil, 1 ltr pouch</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> 
+                <!-- Repeat product cards as needed -->
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vishalcart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", (event) => {
+                    const productCard = event.target.closest(".product-card");
+                    const productId = productCard.dataset.id;
+                    const productName = productCard.dataset.name;
+                    const productPrice = productCard.dataset.price;
+
+                    addToCart(productId, productName, productPrice);
+                });
+            });
+        });
+    </script>
+
+
+  <script>
+    document.querySelectorAll('.product-card').forEach(div => {
+      div.addEventListener('mouseover', function() {
+        this.querySelector('.info').style.display = 'block';
+        const button = this.querySelector('button');
+        button.style.position = 'absolute';
+        button.style.zIndex = '10';
+      });
+
+      div.addEventListener('mouseout', function() {
+        this.querySelector('.info').style.display = 'none';
+        const button = this.querySelector('button');
+        button.style.position = 'static';
+        button.style.zIndex = '1';
+      });
+    });
+  </script>
+</body>
+</html>

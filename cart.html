@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Vishalcart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        footer{
+            margin-top: 114px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                
+                    <h1 class="logo">Vishalcart</h1>
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id="searchInput" name="searchInput" placeholder="Search by product name...">
+                        <button type="submit">Search</button>
+                    </form>
+                
+            </div>
+            <div class="header-right">
+                
+                    <a href="index.html"><button >Home</button></a>
+                    <a href="shop.html"><button>Shop</button></a>
+                    <a href="login.html"><button>Login</button></a>
+                   <a href="cart.html"><button class="active">Cart</button></a>
+                
+            </div>
+        </div>
+    </header>
+
+
+    <main class="cart-main">
+        <div class="container">
+            <h2>Your Cart</h2>
+            <div id="cartItemsContainer">
+                <p id="cartEmptyMessage">Cart is empty</p>
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div id="cartForm">
+                <h3>Enter Your Details</h3>
+                <form id="checkoutForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="contact">Contact details</label>
+                    <input type="text" id="contact" name="contact" required>
+                    <button type="button" id="confirmOrderBtn" onclick="confirmOrder()">Confirm Order</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vishalcart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItemsContainer = document.getElementById('cartItemsContainer');
+            const cartEmptyMessage = document.getElementById('cartEmptyMessage');
+
+            function updateCartDisplay() {
+                cartItemsContainer.innerHTML = '';
+
+                if (cart.length === 0) {
+                    cartEmptyMessage.style.display = 'block';
+                    return;
+                }
+
+                cartEmptyMessage.style.display = 'none';
+
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="order-item">
+                            <h3>${item.name}</h3>
+                            <p>Price: $${item.price}</p>
+                            <p>Quantity: 
+                                <button class="quantity-btn" onclick="changeQuantity(${index}, -1)">-</button>
+                                ${item.quantity}
+                                <button class="quantity-btn" onclick="changeQuantity(${index}, 1)">+</button>
+                            </p>
+                            <p>Total: $${item.price * item.quantity}</p>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+            }
+
+            window.changeQuantity = function(index, change) {
+                if (cart[index].quantity + change > 0) {
+                    cart[index].quantity += change;
+                } else {
+                    cart.splice(index, 1);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            };
+
+            updateCartDisplay();
+        });
+
+        function confirmOrder() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const contact = document.getElementById('contact').value;
+            const deliveryDate = new Date();
+            deliveryDate.setDate(deliveryDate.getDate() + 5);
+
+            const orderDetails = {
+                cart: cart,
+                name: name,
+                address: address,
+                contact: contact,
+                deliveryDate: deliveryDate.toDateString()
+            };
+
+            sessionStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+            localStorage.setItem('cart', JSON.stringify([]));
+            window.location.href = 'order-confirmation.html';
+        }
+    </script>
+</body>
+</html>

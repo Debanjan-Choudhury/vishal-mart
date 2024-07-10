@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="product-one-cat.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-left">
+                
+                    <h1 class="logo">Vishalcart</h1>
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id="searchInput" name="searchInput" placeholder="Search by product name...">
+                        <button type="submit">Search</button>
+                    </form>
+                
+            </div>
+            <div class="header-right">
+                
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="shop.html"><button>Shop</button></a>
+                    <a href="login.html"><button>Login</button></a>
+                   <a href="cart.html"><button>Cart</button></a>
+                
+            </div>
+        </div>
+    </header>
+
+    <div class="product-grid">
+                
+        <!-- Example product cards -->
+        
+        <div class="product-card" data-id="9" data-name="AGARO Marvel 9L Oven Toaster Griller" data-price="1899">
+            <!-- <a href="product-details.html?productId=9"> -->
+                <div class="product-item-img">
+                    <img src="img/shopping.jpg" alt="Product 1">
+                </div>
+                <div class="product-item-info">
+                    <h3>AGARO Marvel Oven</h3>
+                   
+                </div>
+            </a>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+              
+  
+
+        <div class="product-card" data-id="10" data-name="Pigeon Kessel Multipurpose Kettle 1.2 litres with Stainless Steel Body. 600 Watt" data-price="899">
+            <!-- <a href="product-details.html?productId=10"> -->
+                <div class="product-item-img">
+                    <img src="img/pigeon.jpg" alt="Product 1">
+                </div>
+                <div class="product-item-info">
+                    <h3>Pigeon Kessel</h3>
+                   
+                </div>
+            </a>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-id="11" data-name="Siemens Dishwasher" data-price="5500">
+            <!-- <a href="product-details.html?productId=11"> -->
+                <div class="product-item-img">
+                    <img src="img/dishwasher.png" alt="Product 1">
+                </div>
+                <div class="product-item-info">
+                    <h3>Siemens Dishwasher</h3>
+                   
+                </div>
+            </a>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        
+             
+
+    </div>
+    <script src="cart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", (event) => {
+                    const productCard = event.target.closest(".product-card");
+                    const productId = productCard.dataset.id;
+                    const productName = productCard.dataset.name;
+                    const productPrice = productCard.dataset.price;
+
+                    addToCart(productId, productName, productPrice);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

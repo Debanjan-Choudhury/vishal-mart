@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishalcart - Your Online Shopping Destination</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div>
+                    <h1 class="logo">Vishalcart</h1>
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id="searchInput" name="searchInput" placeholder="Search by product name...">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <nav class="header-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to Vishalcart</h2>
+                <p>Your ultimate destination for online shopping</p>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <!-- Product cards -->
+                <div class="product-card" data-id="1" data-name="Product Name 1" data-price="100">
+                    <a href="product-details.html?productId=1">
+                        <img src="product1.jpg" alt="Product 1">
+                        <h3>Product Name 1</h3>
+                        <p>Description and details</p>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-id="2" data-name="Product Name 2" data-price="150">
+                    <a href="product-details.html?productId=2">
+                        <img src="product2.jpg" alt="Product 2">
+                        <h3>Product Name 2</h3>
+                        <p>Description and details</p>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-id="3" data-name="Product Name 3" data-price="120">
+                    <a href="product-details.html?productId=3">
+                        <img src="product3.jpg" alt="Product 3">
+                        <h3>Product Name 3</h3>
+                        <p>Description and details</p>
+                    </a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <!-- Repeat product cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vishalcart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchForm = document.getElementById("searchForm");
+            const searchInput = document.getElementById("searchInput");
+
+            searchForm.addEventListener("submit", (event) => {
+                event.preventDefault(); // Prevent default form submission
+                const searchQuery = searchInput.value.trim().toLowerCase();
+                if (searchQuery.length > 0) {
+                    performSearch(searchQuery);
+                }
+            });
+
+            function performSearch(query) {
+                const productCards = document.querySelectorAll(".product-card");
+
+                productCards.forEach(card => {
+                    const productName = card.dataset.name.toLowerCase();
+                    const cardElement = card.parentElement;
+
+                    if (productName.includes(query)) {
+                        cardElement.style.display = "block"; // Show matching products
+                    } else {
+                        cardElement.style.display = "none"; // Hide non-matching products
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

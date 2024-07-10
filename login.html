@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Vishalcart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                
+                    <h1 class="logo">Vishalcart</h1>
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id="searchInput" name="searchInput" placeholder="Search by product name...">
+                        <button type="submit">Search</button>
+                    </form>
+                
+            </div>
+            <div class="header-right">
+                
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="shop.html"><button>Shop</button></a>
+                    <a href="login.html"><button class="active">Login</button></a>
+                   <a href="cart.html"><button>Cart</button></a>
+                
+            </div>
+        </div>
+    </header>
+
+    <main class="login-main">
+        <div class="container">
+            <h2>Login to Your Account</h2>
+            <form action="#" method="POST" class="login-form" id="loginForm">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#">Sign up here</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vishalcart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript code to handle form submission and redirection
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Simulate login process (replace with actual authentication logic)
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            // Dummy authentication (replace with actual logic)
+            if (username === "user" && password === "password") {
+                // Redirect to home page after successful login
+                window.location.href = "index.html"; // Replace with your actual home page URL
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

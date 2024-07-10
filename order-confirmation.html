@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Vishalcart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to this page if needed */
+        .confirmation-main {
+            padding: 50px 0;
+            text-align: left; /* Align text to the left */
+        }
+        .order-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .order-item h4 {
+            margin-top: 0;
+        }
+        .order-item{
+        display: flex;
+        }
+    .orderedimg{
+        width: 30%;
+        height: 100%;
+        background-color: red;
+    }
+    main{
+        width: 100%;
+        min-height: 100vh;
+        /* overflow: hidden; */
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                
+                    <h1 class="logo">Vishalcart</h1>
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id="searchInput" name="searchInput" placeholder="Search by product name...">
+                        <button type="submit">Search</button>
+                    </form>
+                
+            </div>
+            <div class="header-right">
+                
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="shop.html"><button>Shop</button></a>
+                    <a href="login.html"><button>Login</button></a>
+                   <a href="cart.html"><button>Cart</button></a>
+                
+            </div>
+        </div>
+    </header>
+
+    <main class="confirmation-main">
+        <div class="container">
+            <h2>Order Confirmation</h2>
+            <div id="orderDetails"></div>
+            <button onclick="goToHome()">Back to Home</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vishalcart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Retrieve order details from sessionStorage
+            const orderDetails = JSON.parse(sessionStorage.getItem('orderDetails'));
+
+            // Get container to display order details
+            const orderDetailsContainer = document.getElementById("orderDetails");
+
+            if (orderDetails) {
+                orderDetailsContainer.innerHTML = `
+                    <h3>Thank you for your order!</h3>
+                    <p>Your order has been placed.</p>
+                    <h4>Delivery Details:</h4>
+                    <p>Delivery Date: ${orderDetails.deliveryDate}</p>
+                    <h4>Order Details:</h4>
+                    ${orderDetails.cart.map(item => `
+                        <div class="order-item">
+                            <div class="orderedimg">
+                                
+                            </div>
+                            <div class="orderedinfo">
+                                <h4>Product Name: ${item.name}</h4>
+                                <p>Quantity: ${item.quantity}</p>
+                                <p>Price per unit: $${item.price}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                    <h4>Contact Details:</h4>
+                    <p>Contact: ${orderDetails.contact}</p>
+                    <p>Address: ${orderDetails.address}</p>
+                `;
+            } else {
+                orderDetailsContainer.innerHTML = `<p>No order details found.</p>`;
+            }
+
+            // Clear sessionStorage after displaying order details
+            sessionStorage.removeItem('orderDetails');
+        });
+
+        function goToHome() {
+            window.location.href = 'index.html'; // Redirect to home page
+        }
+    </script>
+</body>
+</html>
